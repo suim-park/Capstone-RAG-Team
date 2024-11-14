@@ -70,21 +70,20 @@ Two medical questions regarding Sepsis and ARDS (Acute respiratory distress synd
 The experiment aimed to evaluate the performance of the GraphRAG model under two conditions—**aligned (widespread consensus)** and **conflicting (no consensus)**—using two medical questions related to **Sepsis** and **ARDS (Acute Respiratory Distress Syndrome)**. The quality of the generated answers was rated by GPT-4 on a scale from 0 (contradictory) to 1 (fully aligned).
 
 1. **Aligned Condition (Widespread Consensus):**
-   - In this condition, documents with **aligned conclusions** regarding the medical treatment were incrementally added to the knowledge graph alongside a few equivocal documents.
-   - The graph shows that as the number of research papers increases (from 1 to 5), the **answer quality improves consistently**, starting from 0.8 (1 document) to 0.9 (5 documents). This indicates that adding documents—even those with some equivocal conclusions—helps strengthen the model's ability to synthesize and improve the quality of its responses.
+   - In this condition, documents with **aligned conclusions** regarding the medical treatment were incrementally added to the knowledge graph alongside a few documents that failed to provide determinate conclusion.
+   - The graph shows that as the number of research papers increases (from 1 to 5), the **answer quality improves consistently**, starting from 0.8 (1 document) to 0.9 (5 documents). This indicates that adding documents—little equivocal conclusions—helps strengthen the model's ability to synthesize and improve the quality of its responses.
    - This trend highlights the positive influence of adding aligned and contextually relevant information to the GraphRAG model.
 
 2. **Conflicting Condition (No Consensus):**
    - In this condition, documents with **conflicting conclusions** were added to the knowledge graph, alongside irrelevant or partially related documents.
-   - The graph reveals a **steady decline in answer quality** as more documents are introduced:
-     - The quality drops from 0.5 (1 document) to 0.2 (3 documents) and eventually to 0.1 (5 documents).
+   - The graph reveals a **steady decline in answer quality** as more documents are introduced. The quality drops from 0.5 (1 document) to 0.2 (3 documents) and eventually to 0.1 (5 documents).
    - This indicates that introducing conflicting or irrelevant information negatively impacts the model's performance, making it harder for the system to resolve contradictions and generate high-quality responses.
 
-**Key Insight:**
-- The results demonstrate that the GraphRAG model performs best when additional documents provide aligned and contextually relevant information. Even when equivocal documents are included, the model can synthesize the data effectively to improve the answer quality. 
+**Key Findings:**
+- The results demonstrate that the GraphRAG model performs best when additional documents provide aligned and contextually relevant information. With little equivocal documents are included, the model can synthesize the data effectively to improve the answer quality. 
 - Conversely, conflicting or irrelevant information introduces ambiguity, degrading the model's ability to generate coherent and accurate responses, as seen in the declining performance in the conflicting condition.
 
-These findings underscore the importance of **data quality and consensus** in constructing knowledge graphs for GraphRAG workflows, especially in fields like medicine, where inconsistent information can heavily impact outcomes.
+These findings underscore the importance of **data quality and consensus** in constructing knowledge graphs for GraphRAG workflows, especially in fields like medicine, where inconsistent information can heavily impact outcomes. Later in this project, we will ensure to test model's ability on a larger scale of documents and well as introducing additional metadata into the knowledge graph in an attempt to strengthen model's reasoning mechanism. 
 
 
 ## Conclusion
