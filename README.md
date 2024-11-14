@@ -21,7 +21,7 @@
 5.	Conclusion
 6.	Package
 7.	Resources
-8.	Contributors
+8.	[Contributors](#contributors)
 
 ## Abstract
 
