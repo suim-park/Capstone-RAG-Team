@@ -1,9 +1,31 @@
 # Capstone-RAG-Team
-Capstone Github Repository for RAG Team with Duke University School of Medicine
-* **Team Name**: RAG Team
-* **Executive Sponsor**: Dr. Ian Wong (a.ian.wong@duke.edu)
-* **Mentor Instructor**: Dr. Yue Jiang (yue.jiang@duke.edu)
-* **Team Member**: Yun-chung (Murphy) Liu, Keon Narty, Suim Park, Bob Zhang
+
+## Table of Contents
+
+1.	[Abstract](#absract)
+2.	Introduction
+2.1 Proofpoint 
+3.	Methods
+3.1 Overview
+3.2 Knowledge Distillation
+3.3 Anchor Method
+3.4 Novel Method 
+4.	Experiments
+4.1. Experiments: Existing Methods
+4.1.1. Experiment setup
+4.1.2. Metrics
+4.1.3. Models
+4.1.4. Results
+4.2. Experiments: Novel Method
+4.2.1. Experiment setup 
+5.	Conclusion
+6.	Package
+7.	Resources
+8.	Contributors
+
+## Abstract
+
+
 
 ## Project Overview
 This project aims to develop and deploy a chatbot for critical care using a GraphRAG-based approach. By storing and indexing published journal articles on critical care, the chatbot will provide responses based on verified sources, ensuring that medical teams access current, reliable information. Leveraging GraphRAG will address many limitations of standard large language models (LLMs) by grounding responses in specific articles, helping to reduce hallucinations, minimize reliance on potentially outdated guidelines, and improve transparency. Furthermore, by sourcing responses directly from the most recent medical literature, the chatbot can offer accurate, up-to-date information while respecting patient privacy and ensuring that all answers are easily verifiable.
@@ -65,3 +87,10 @@ The Output section presents detailed responses generated in answer to question q
 
 ### 4_Reports_Presentations
 Documentation and presentation materials from the capstone project, including interim and final reports as well as presentations, are uploaded here to chronicle the project’s development and key milestones.
+
+Capstone Github Repository for RAG Team with Duke University School of Medicine
+
+* **Team Name**: RAG Team
+* **Executive Sponsor**: Dr. Ian Wong (a.ian.wong@duke.edu)
+* **Mentor Instructor**: Dr. Yue Jiang (yue.jiang@duke.edu)
+* **Team Member**: Yun-chung (Murphy) Liu, Keon Nartey, Suim Park, Bob Zhang
