@@ -1,4 +1,4 @@
-# Capstone-RAG-Team
+# Medical Questioning and Answering Using GraphRag
 
 ## Table of Contents
 
@@ -13,8 +13,9 @@
   	3.3 [GraphRag vs Naive Rag](#graphragvsnaiverag)
 
 4. [Experiments](#experiments)
-5. [Conclusion](#conclusion)
-6. [Contributors](#contributors)
+5. [Results](#results)
+6. [Conclusion](#conclusion)
+7. [Contributors](#contributors)
 
 ## Abstract
 
