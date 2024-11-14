@@ -38,6 +38,12 @@ Some research papers tend to agree with the question being asked whiles some dis
 
 ## Methods
 
+Retrieval-Augmented Generation (RAG) enables Large Language Models (LLMs) to retrieve relevant information from external knowledge sources, allowing them to answer questions more effectively. Traditional RAG systems primarily offer query-focused summarization, which may lead to less comprehensive answers when querying an entire document corpus.
+
+GraphRAG builds upon RAG by leveraging LLMs to construct a graph-based index through a two-stage process. First, it derives an entity knowledge graph from source documents. Then, it pre-generates community summaries for clusters of closely-related entities. When a question is asked, each community summary contributes to generating a partial response. These partial responses are subsequently combined into a final, comprehensive answer for the user.
+
+Microsoft has conducted experiments comparing standard RAG models with GraphRAG, showing that GraphRAG significantly improves both the comprehensiveness and diversity of generated answers.
+
 ## Dataset
 ## Graphrag
 
