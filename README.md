@@ -2,15 +2,16 @@
 
 ## Table of Contents
 
-1.	[Abstract](#absract)
-2.	Introduction
-2.1 Proofpoint 
-3.	Methods
-3.1 Overview
+1.	[Abstract](#abstract)
+2.	[Introduction](#introduction)
+3.	[Methods](#methods)
+
+  	3.1 [Dataset](#dataset)
+  	
 3.2 Knowledge Distillation
 3.3 Anchor Method
 3.4 Novel Method 
-4.	Experiments
+5.	Experiments
 4.1. Experiments: Existing Methods
 4.1.1. Experiment setup
 4.1.2. Metrics
@@ -18,44 +19,37 @@
 4.1.4. Results
 4.2. Experiments: Novel Method
 4.2.1. Experiment setup 
-5.	Conclusion
-6.	Package
-7.	Resources
-8.	[Contributors](#contributors)
+6.	Conclusion
+7.	Package
+8.	Resources
+9.	[Contributors](#contributors)
 
 ## Abstract
 
+Our team is developing a chatbot powered by GraphRAG (Graph Retrieval-Augmented Generation) technology, utilizing data from Wiki Journal Club—a free, open-source dataset that includes papers from reputable medical journals. For example, under the topic of sepsis, Wiki Journal Club features five relevant papers. Of these, two suggest that corticosteroids may improve patient outcomes, while the other three present different perspectives without explicitly supporting or opposing this intervention. Physicians seeking guidance on treating sepsis and adrenal insufficiency must often review these documents individually, a time-consuming process that our chatbot aims to streamline.
 
+Leveraging GraphRAG, our chatbot constructs a high-level knowledge graph that summarizes key findings across multiple research papers, synthesizing information to provide concise and reliable insights in response to specific queries. While summarizing complex medical data risks oversimplification, we mitigate this by collaborating closely with clinical experts to ensure that summaries are clinically relevant and contextually appropriate. This tool is not intended to replace a physician’s decision-making but rather to expedite information retrieval, enabling clinicians to make informed decisions more efficiently and confidently. By surfacing relevant, up-to-date research on demand, the chatbot aims to significantly reduce the time physicians spend on manual research, ultimately enhancing patient care.
 
-## Project Overview
-This project aims to develop and deploy a chatbot for critical care using a GraphRAG-based approach. By storing and indexing published journal articles on critical care, the chatbot will provide responses based on verified sources, ensuring that medical teams access current, reliable information. Leveraging GraphRAG will address many limitations of standard large language models (LLMs) by grounding responses in specific articles, helping to reduce hallucinations, minimize reliance on potentially outdated guidelines, and improve transparency. Furthermore, by sourcing responses directly from the most recent medical literature, the chatbot can offer accurate, up-to-date information while respecting patient privacy and ensuring that all answers are easily verifiable.
+## Introduction
 
-## Background
+The Hippocratic oath, "do no harm," stands as the ethical cornerstone of the medical profession. Physicians strive to uphold this oath in all aspects of their work, whether in the clinic, emergency room, or operating theater. Medicine is not practiced in isolation; rather, teams of physicians from various disciplines often collaborate to devise treatment plans for individual patients. These decisions are frequently informed by current research and clinical guidelines.
 
-As the number of research papers and guidelines increase, it becomes a tremendous burden for physicians to stay up-to-date to make informed decisions faced with various clinical conditions. The main object for this project is the development of an evidence-based medical question answering model for clinical use.
+However, physicians face significant challenges in staying up-to-date with the latest clinical guidelines and research, particularly for critical conditions. Reading through extensive texts to understand study populations, methods, clinical presentations, and outcomes is a necessary but time-intensive task. In the modern age of artificial intelligence, vast amounts of data have been utilized to train models, though most medical research is not open-access due to the sensitive nature of patient data.
 
-## Example Question 
-
-Among patients with septic shock and relative adrenal insufficiency, do corticosteroids reduce 28-day mortality?
-
+This project aims to build an AI chatbot powered by GraphRAG, using a knowledge graph to deliver accurate summaries. When queried by a physician, the chatbot will provide detailed responses regarding research methodologies, the alignment of methods to conclusions, and the relevance of the research to the patient being treated. An example question is; Among patients with septic shock and relative adrenal insufficiency, do corticosteroids reduce 28-day mortality?
 
 <img width="1108" alt="Screenshot 2024-11-08 at 1 32 33 PM" src="https://github.com/user-attachments/assets/f7203589-b6f3-42e0-b7d6-a49f80aae050">
 
-Some research papers tend to agree with the question being asked whiles some disagree, but ultimately depends on the patient being treated by the physician and which of the study closely aligns to the patient.
 
-## Outline
+Some research papers tend to agree with the question being asked whiles some disagree, but ultimately depends on the patient being treated by the physician and which of the study closely aligns to the patient. Ultimately, when physicians consult research guidelines, they seek to understand how closely the study populations align with their current patients and how the research methods could benefit their patients. Our chatbot aims to deliver quick, reliable insights, saving physicians significant time and providing accurate answers to aid in patient treatment and ongoing research.
 
->- [Dataset](https://www.wikijournalclub.org/wiki/WikiJournalClub:Usable_articles#Critical_Care)
->- The GraphRAG Model
->- Evaluation Metrics
->- A Small GraphRAG Experiment
->- Results
->- Next Steps
+## Methods
 
-## The GraphRag Model
-
+## Dataset
 
 <img width="538" alt="Screenshot 2024-11-08 at 1 47 23 PM" src="https://github.com/user-attachments/assets/5bb925fa-1fa3-49c5-8215-0b3dd8a1894b">
+
+
 
 ## Experiment
 
