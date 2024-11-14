@@ -73,7 +73,7 @@ The visualizations illustrate the effects of adding aligned or conflicting resea
 ## Conclusion
 
 ## Detailed Map of the Repo
-### 0__Documents
+### [0__Documents](https://github.com/suim-park/Capstone-RAG-Team/tree/main/0__Documents)
 - **Documents**: Contains the documents for constructing GraphRAG. We extracted full text of research papers from the Critical Care section of Wiki Journal Club ([Link](https://www.wikijournalclub.org/wiki/WikiJournalClub:Usable_articles#Critical_Care)). To simplify the the code, extracted texts were saved them as .txt files named in the format `doc_*.txt`. 
 - **Mapping Document**: The mapping document matches each document’s file name with its original paper title, providing an easy reference for all critical care documents.
 
