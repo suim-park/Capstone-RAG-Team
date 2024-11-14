@@ -88,6 +88,7 @@ The Output section presents detailed responses generated in answer to question q
 ### 4_Reports_Presentations
 Documentation and presentation materials from the capstone project, including interim and final reports as well as presentations, are uploaded here to chronicle the project’s development and key milestones.
 
+## Contributors
 Capstone Github Repository for RAG Team with Duke University School of Medicine
 
 * **Team Name**: RAG Team
