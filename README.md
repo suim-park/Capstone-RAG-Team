@@ -76,7 +76,7 @@ The experiment aimed to evaluate the performance of the GraphRAG model under two
 
 1. **Aligned Condition (Widespread Consensus):**
    - In this condition, documents with **aligned conclusions** regarding the medical treatment were incrementally added to the knowledge graph alongside a few documents that failed to provide determinate conclusion.
-   - The graph shows that as the number of research papers increases (from 1 to 5), the **answer quality improves consistently**, starting from 0.8 (1 document) to 0.9 (5 documents). This indicates that adding documents—little equivocal conclusions—helps strengthen the model's ability to synthesize and improve the quality of its responses.
+   - The graph shows that as the number of research papers increases from 1 to 3, **answer quality improves**, starting from 0.8 (1 document) to 0.9 (3 documents), **but plateaus** between 3 and 5 documents.
    - This trend highlights the positive influence of adding aligned and contextually relevant information to the GraphRAG model.
 
 2. **Conflicting Condition (No Consensus):**
