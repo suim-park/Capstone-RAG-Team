@@ -124,3 +124,4 @@ Capstone Github Repository for RAG Team with Duke University School of Medicine
 
 ## References
 
+1. Edge D, Trinh H, Cheng N, *et al.* From local to global: A graph rag approach to query-focused summarization. arXiv preprint arXiv:2404.16130. 2024 Apr 24.
