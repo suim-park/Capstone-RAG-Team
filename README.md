@@ -93,16 +93,16 @@ These findings underscore the importance of **data quality and consensus** in co
 - **Documents**: Contains the documents for constructing GraphRAG. We extracted full text of research papers from the Critical Care section of Wiki Journal Club ([Link](https://www.wikijournalclub.org/wiki/WikiJournalClub:Usable_articles#Critical_Care)). To simplify the the code, extracted texts were saved them as .txt files named in the format `doc_*.txt`. 
 - **Mapping Document**: The mapping document matches each document’s file name with its original paper title, providing an easy reference for all critical care documents.
 
-### 1__Codes
+### [1__Codes](https://github.com/suim-park/Capstone-RAG-Team/tree/main/1__Codes)
 The Codes section encompasses all scripts necessary for the end-to-end workflow, from GraphRAG processing to deployment on Azure. This includes data preprocessing, query handling, and indexing for GraphRAG, as well as configuration and automation for deploying the final model on Azure. Each script is structured to streamline and optimize the setup, allowing for efficient handling of critical care documents, interactive query responses, and scalable deployment.
 
-### 2__Visualization
+### [2__Visualization](https://github.com/suim-park/Capstone-RAG-Team/tree/main/2__Visualization)
 The Visualizations section includes comprehensive visual aids for understanding the project workflow, from data ingestion to query processing and deployment. It features images illustrating the main interface and interaction flow of the deployed chatbot, highlighting the process and results generated through GraphRAG. Additionally, this section will showcase outcome visuals, such as document summaries and insights derived from the critical care dataset, providing a clear and interactive view of how the chatbot functions and the insights it offers.
 
-### 3__Output
+### [3__Output](https://github.com/suim-park/Capstone-RAG-Team/tree/main/3__Output)
 The Output section presents detailed responses generated in answer to question queries, along with evaluation scores based on various rating methods. Each answer is accompanied by metrics that assess its quality, relevance, and accuracy. These evaluation scores are generated through pre-defined rating methods to provide insight into the chatbot’s performance, the reliability of responses, and areas for improvement. This section enables users to gauge the effectiveness of the model’s answers, ensuring that the system meets quality standards for critical care information delivery.
 
-### 4_Reports_Presentations
+### [4_Reports_Presentations](https://github.com/suim-park/Capstone-RAG-Team/tree/main/4__Reports_Presentations)
 Documentation and presentation materials from the capstone project, including interim and final reports as well as presentations, are uploaded here to chronicle the project’s development and key milestones.
 
 ## Contributors
@@ -111,4 +111,4 @@ Capstone Github Repository for RAG Team with Duke University School of Medicine
 * **Team Name**: RAG Team
 * **Executive Sponsor**: Dr. Ian Wong (a.ian.wong@duke.edu)
 * **Mentor Instructor**: Dr. Yue Jiang (yue.jiang@duke.edu)
-* **Team Member**: Yun-chung (Murphy) Liu, Keon Nartey, Suim Park, Bob Zhang
+* **Team Member**: [Yun-chung (Murphy) Liu](https://github.com/halfmoonliu), [Keon Nartey](https://github.com/Keonnartey), [Suim Park](https://github.com/suim-park), [Bob Zhang](https://github.com/BobZhang26)
