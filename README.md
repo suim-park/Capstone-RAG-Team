@@ -87,6 +87,7 @@ These findings underscore the importance of **data quality and consensus** in co
 
 
 ## Conclusion
+In conclusion, while GraphRAG provides a significant advancement by enabling globally summarized content with pinned sources, it underscores the critical need for transparency in AI-driven decision-making. Decision-making should not rest solely with the model; instead, the model should focus on presenting the sources it learned from to allow human users to evaluate its outputs. Our findings reveal that conflicting documents confuse the model, as it currently weighs all input documents equally, regardless of their credibility or relevance. Additionally, the absence of important metadata, such as citation counts, publication year, or organizational affiliations, limits the model's ability to differentiate authoritative from less reliable sources. Compared to traditional RAG approaches, which rely solely on semantics and similarity, GraphRAG offers enhanced reasoning through graph-based relationships. However, these insights highlight the importance of improving input weighting mechanisms and incorporating richer metadata to ensure more accurate and reliable outputs.
 
 ## Detailed Map of the Repo
 ### [0__Documents](https://github.com/suim-park/Capstone-RAG-Team/tree/main/0__Documents)
