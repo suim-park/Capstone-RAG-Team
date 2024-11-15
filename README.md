@@ -9,8 +9,6 @@
   	3.1 [Dataset](#dataset)
   	
   	3.2 [GraphRAG](#graphrag)
-  	
-  	3.3 [GraphRAG vs Naive RAG](#graphragvsnaiverag)
 
 4. [Experiments](#experiments)
 5. [Results](#results)
