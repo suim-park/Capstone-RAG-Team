@@ -1,4 +1,4 @@
-# Medical Questioning and Answering Using GraphRag
+# Medical Question Answering Using GraphRag
 
 ## Table of Contents
 
