@@ -8,7 +8,7 @@
 
   	3.1 [Dataset](#dataset)
   	
-  	3.2 [GraphRag](#graphrag)
+  	3.2 [GraphRAG](#graphrag)
   	
   	3.3 [GraphRag vs Naive Rag](#graphragvsnaiverag)
 
@@ -51,7 +51,7 @@ Wiki Journal Club (WJC) is an open-source platform similar to Wikipedia, serving
 
 For this project, we used the full text for data ingestion and indexing. Additionally, we utilized questions posed within Wiki Journal Club entries and the conclusions derived from each full paper to create a well-structured dataset that supports our chatbot’s query-based retrieval and summarization functions.
 
-## Graphrag
+## GraphRAG
 
 <img width="538" alt="Screenshot 2024-11-08 at 1 47 23 PM" src="https://github.com/user-attachments/assets/5bb925fa-1fa3-49c5-8215-0b3dd8a1894b">
 
