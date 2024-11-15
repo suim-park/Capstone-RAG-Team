@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-# Medical Question Answering Using GraphRag
-=======
 # Medical Questioning and Answering Using GraphRAG
->>>>>>> c97ce9c (Update files)
 
 ## Table of Contents
 
@@ -13,12 +9,8 @@
   	3.1 [Dataset](#dataset)
   	
   	3.2 [GraphRAG](#graphrag)
-<<<<<<< HEAD
-
-=======
   	
   	3.3 [GraphRAG vs Naive RAG](#graphragvsnaiverag)
->>>>>>> c97ce9c (Update files)
 
 4. [Experiments](#experiments)
 5. [Results](#results)
@@ -60,15 +52,8 @@ Wiki Journal Club (WJC) is an open-source platform similar to Wikipedia, serving
 For this project, we used the full text for data ingestion and indexing. Additionally, we utilized questions posed within Wiki Journal Club entries and the conclusions derived from each full paper to create a well-structured dataset that supports our chatbot’s query-based retrieval and summarization functions.
 
 ## GraphRAG
-<<<<<<< HEAD
-
-<img width="538" alt="Screenshot 2024-11-08 at 1 47 23 PM" src="https://github.com/user-attachments/assets/5bb925fa-1fa3-49c5-8215-0b3dd8a1894b">
-
-The GraphRAG model<sup>1</sup> leverages LLMs to generate a knowledge graph based on source documents and generate answers based on the graph. The workflow is described below.
-=======
 
 ![GraphRAG](2__Visualization/Workflow.png)
->>>>>>> c97ce9c (Update files)
 
 1. Sourced documents are separated into chunks of texts.
 2. Chunks of texts are parsed to identify entities (e.g. names) and relationships between entities.
