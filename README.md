@@ -54,7 +54,7 @@ For this project, we used the full text for data ingestion and indexing. Additio
 
 ![GraphRAG](2__Visualization/Workflow.png)
 
-1. Sourced documents are separated into chunks of texts.
+1. Source documents are separated into chunks of texts.
 2. Chunks of texts are parsed to identify entities (e.g. names) and relationships between entities.
 3. The parsed entities and descriptions are used to generate a knowledge graph, *nodes* of the graph being the entities.
 4. Summaries for nodes and community of nodes are generated.
