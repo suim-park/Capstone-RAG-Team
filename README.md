@@ -29,6 +29,8 @@ The Hippocratic oath, "do no harm," stands as the ethical cornerstone of the med
 
 However, physicians face significant challenges in staying up-to-date with the latest clinical guidelines and research, particularly for critical conditions. Reading through extensive texts to understand study populations, methods, clinical presentations, and outcomes is a necessary but time-intensive task. In the modern age of artificial intelligence, vast amounts of data have been utilized to train models, though most medical research is not open-access due to the sensitive nature of patient data.
 
+Transformer-based large language models (LLMs) have demonstrated increased capacity of machine question answering^{1, 2}, which has the potential to be applied to provide information for physician decision making in critical care medicine. However, in the medical domain, the source of information plays a critical role, as different sources could point to contradicting conclusions to the same questions. Moreover, recommended intervention to a given medical condition can evolve as research papers and guidelines are published on a daily basis. To address this issue, Lewis et al. (2020) came up with the idea of retrieval augmented generation (RAG), which ask pretrained models to give answers based on a source document^3. Edge et al. (2024) further purposed to used a knowledge graph to represent documents and ask pretrained models to give answers based on the graph (GraphRAG)^4.
+
 **This project aims to build an AI chatbot powered by GraphRAG, using a knowledge graph to deliver accurate summaries**. When queried by a physician, the chatbot will provide detailed responses regarding research methodologies, the alignment of methods to conclusions, and the relevance of the research to the patient being treated. **An example question is; Among patients with septic shock and relative adrenal insufficiency, do corticosteroids reduce 28-day mortality?**
 
 <img width="1108" alt="Screenshot 2024-11-08 at 1 32 33 PM" src="https://github.com/user-attachments/assets/f7203589-b6f3-42e0-b7d6-a49f80aae050">
@@ -120,5 +122,7 @@ Capstone Github Repository for RAG Team with Duke University School of Medicine
 * **Team Member**: [Yun-chung (Murphy) Liu](https://github.com/halfmoonliu), [Keon Nartey](https://github.com/Keonnartey), [Suim Park](https://github.com/suim-park), [Bob Zhang](https://github.com/BobZhang26)
 
 ## References
-
-1. Edge D, Trinh H, Cheng N, *et al.* From local to global: A graph rag approach to query-focused summarization. arXiv preprint arXiv:2404.16130. 2024 Apr 24.
+1. Vaswani, A., *et al.* "Attention is all you need." Advances in Neural Information Processing Systems (2017).
+2. Brown, Tom B., *et al.* "Language models are few-shot learners." arXiv preprint arXiv:2005.14165 (2020).
+3. Lewis, Patrick, *et al.* "Retrieval-augmented generation for knowledge-intensive nlp tasks." Advances in Neural Information Processing Systems 33 (2020): 9459-9474.
+4. Edge, Darren, *et al*. "From local to global: A graph rag approach to query-focused summarization." arXiv preprint arXiv:2404.16130 (2024).
