@@ -113,6 +113,9 @@ The Output section presents detailed responses generated in answer to question q
 ### [4_Reports_Presentations](https://github.com/suim-park/Capstone-RAG-Team/tree/main/4__Reports_Presentations)
 Documentation and presentation materials from the capstone project, including interim and final reports as well as presentations, are uploaded here to chronicle the project’s development and key milestones.
 
+## GraphRAG Walkthrough and Setup Guide
+Here's the walkthrough video for GraphRAG: [Watch the video](https://youtu.be/12l63qY2zDQ)
+
 ## Contributors
 Capstone Github Repository for RAG Team with Duke University School of Medicine
 
