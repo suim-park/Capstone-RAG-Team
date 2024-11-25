@@ -10,14 +10,16 @@ This project leverages **GraphRAG**, an advanced Retrieval-Augmented Generation 
 - **State-of-the-Art GPT Models:** Incorporates the latest **GPT-4o** for superior performance.
 
 ## Folder Structure
-|– input
-    |–– doc_0.txt
-    |–– doc_1.txt
-    |–– ...
-    |–– doc_23.txt
+```
+|– input/
+|   |– doc_0.txt
+|   |– doc_1.txt
+|   |– …
+|   |– doc_23.txt
 |– settings.yaml
 |– output/
-|– prompts
+|– prompts/
+```
 
 ### Explanation
 1. **input/**: Stores research papers in `.txt` format organized into categories (e.g., ARDS, Sepsis).
@@ -41,30 +43,30 @@ Ensure your settings.yaml file is configured with the correct API keys for OpenA
 2. Prepare Input Data
 
 	1. Create an input/ folder:
-    ```bash
-    mkdir input
-    ```
-    2. Extract research papers from Wiki Journal Club related to ARDS and Sepsis.
+	    ```bash
+	    mkdir input
+	    ```
+	2. Extract research papers from Wiki Journal Club related to ARDS and Sepsis.
 	3. Save each paper as a .txt file in the respective subfolder (e.g., doc_*.txt).
 
 3. Create Knowledge Graphs
 
-Run the following command to generate knowledge graphs from the input data:
-```bash
-python -m graphrag.index --root .
-```
+	Run the following command to generate knowledge graphs from the input data:
+	```bash
+	python -m graphrag.index --root .
+	```
 
 4. Query the System
-Ask questions using Local or Global search modes:
-```bash
-python -m graphrag.query --root . --method local "Your_Question"
-python -m graphrag.query --root . --method global "Your_Question"
-```
+	Ask questions using Local or Global search modes:
+	```bash
+	python -m graphrag.query --root . --method local "Your_Question"
+	python -m graphrag.query --root . --method global "Your_Question"
+	```
 
 5. Evaluate the Results
 
-The responses are evaluated using:
-- Human Rating
-- GPT Rating
-- ROUGE
-- BLEU
+	The responses are evaluated using:
+	- Human Rating
+	- GPT Rating
+	- ROUGE
+	- BLEU
