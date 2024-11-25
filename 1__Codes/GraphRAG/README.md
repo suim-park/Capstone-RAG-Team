@@ -68,5 +68,5 @@ Ensure your settings.yaml file is configured with the correct API keys for OpenA
 	The responses are evaluated using:
 	- Human Rating
 	- GPT Rating
-	- ROUGE
+	- ROUGE-L
 	- BLEU
