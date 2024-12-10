@@ -73,8 +73,7 @@ Two medical questions regarding Sepsis and ARDS (Acute respiratory distress synd
 
 ## Results
 
-![Final Visualization_RAGTeam](https://github.com/user-attachments/assets/dcb8e7b9-dabc-467d-aaca-54d1c5dc8af7)
-
+![WhatsApp Image 2024-12-10 at 18 46 11](https://github.com/user-attachments/assets/fb89e04b-a719-438f-9b8e-ccd8f3e9921c)
 
 
 The experiment aimed to evaluate the performance of the GraphRAG model under two conditions—**aligned (widespread consensus)** and **conflicting (no consensus)**—using two medical questions related to **Sepsis** and **ARDS (Acute Respiratory Distress Syndrome)**. The quality of the generated answers was rated by GPT-4 on a scale from 0 (contradictory) to 1 (fully aligned).
