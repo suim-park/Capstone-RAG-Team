@@ -72,7 +72,10 @@ Two medical questions regarding Sepsis and ARDS (Acute respiratory distress synd
 2. In the **conflicting condition**, documents pointing to **conflicting conclusions** were used to construct knowledge graph. Specifically, we used 1 (source), 3 (source + 1 document with **conflicting** conclusion + 1 document related to ARDS but irrelevant to the treatment), and 5 (source + 1 document with **conflicting** conclusion + 3 documents related to ARDS but irrelevant to the treatment) to build the knowledge graph. 
 
 ## Results
-![Final_Visualization](2__Visualization/Final Visualization_RAGTeam.png)
+
+![Final Visualization_RAGTeam](https://github.com/user-attachments/assets/dcb8e7b9-dabc-467d-aaca-54d1c5dc8af7)
+
+
 
 The experiment aimed to evaluate the performance of the GraphRAG model under two conditions—**aligned (widespread consensus)** and **conflicting (no consensus)**—using two medical questions related to **Sepsis** and **ARDS (Acute Respiratory Distress Syndrome)**. The quality of the generated answers was rated by GPT-4 on a scale from 0 (contradictory) to 1 (fully aligned).
 
