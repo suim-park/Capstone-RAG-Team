@@ -1,3 +1,5 @@
+![image](https://github.com/user-attachments/assets/60cd8b49-4dd9-4904-b94f-a7bf31ed06fa)
+
 # Medical Question Answering Using GraphRAG
 
 ## Table of Contents
