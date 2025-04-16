@@ -1,0 +1,37 @@
+Question Number,Question,Correct Predictions,Total Papers,Accuracy
+1,Does early administration of neuromuscular blocking agents increases the ventilator free days?,5.0,112.0,0.044642857142857144
+2,Do patients with severe ARDS being treated with neuromuscular blocking agents have increased muscle weakness?,7.0,112.0,0.0625
+3,"In patients with moderate to severe ARDS, does early use of continuous neuromuscular blockade improve mortality?",6.0,112.0,0.05357142857142857
+4,Do patients with moderate-to-severe ARDS have a significance difference in mortality rate between patients who received an early and continuous cisatracurium infusion than those with usual care approach with lighter sedation targets?,9.0,112.0,0.08035714285714286
+5,"Among patients with ALI/ARDS, does a conservative fluid management strategy improves lung function and decrease ventilator days compared to liberal strategy?",5.0,112.0,0.044642857142857144
+6,Does a conservative fluid management strategy result in a significant difference in mortality as the primary outcome?,0.0,112.0,0.0
+7,Does mechanical ventilation with a lower tidal volume result in decreased mortality with acute lung injury and acute respiratory distress syndrome?,5.0,112.0,0.044642857142857144
+8,Does mechanical ventilation with a lower tidal volume result increased ventilator free days with patients with acute lung injury and acute respiratory distress syndrome?,3.0,112.0,0.026785714285714284
+9,Prone positioning sessions in patients with severe ARDS significantly decreased mortality?,7.0,112.0,0.0625
+10,Does early application of high frequency oscillatory ventilation compared with ventilation strategy of low tidal volume decrease mortality?,10.0,112.0,0.08928571428571429
+11,"Patients with septic shock undergoing mechanical ventilation, did continuous infusion of hydrocortisone result in lower 90-day mortality?",6.0,112.0,0.05357142857142857
+12,Does a 7-day treatment with low doses of steroids significantly reduce the risk of death in patients with septic shock and relative adrenal insufficiency without increasing adverse events?,3.0,112.0,0.026785714285714284
+13,Do patients who receive hydrocortisone plus fludrocortisone have a lower 90-day all cause mortality than patients given a placebo?,3.0,112.0,0.026785714285714284
+14,Does steroids hasten the reversal of shock in patients whom had septic shock reversed?,4.0,112.0,0.03571428571428571
+15,Does early administration of acetaminophen to treat fever affect the number of ICU-free days,2.0,112.0,0.017857142857142856
+16,Does treatment with activated C protein significantly reduce mortality in patients with severe sepsis?,7.0,112.0,0.0625
+17,Albumin replacement in addition to crystalloids compared with crystalloids alone did not improve the rate of survival,1.0,112.0,0.008928571428571428
+18,Does the use albumin for fluid resuscitation result in similar outcome at 28 days with that of normal saline?,6.0,112.0,0.05357142857142857
+19,Did hemodynamic management according to a strict early goal directed therapy protocol led to an improvement in outcome?,1.0,112.0,0.008928571428571428
+20,Does treatment with DrotAA (activated) significantly reduce mortality at 28 days or 90 days compared with placebo in patients with septic shock?,4.0,112.0,0.03571428571428571
+21,"In patients with coma after out-of-hospital cardiac arrest, did targeted hypothermia lead to a lower incidence of death by 6 months than targeted normothermia?",7.0,112.0,0.0625
+22,"In unconscious survivors of out-of-hospital cardiac arrest of presumed cardiac cause, does hypothermia at a targeted temperature of 33°C provide any benefit compared with a targeted temperature of 36°C?",6.0,112.0,0.05357142857142857
+23,"Following patients that have been fully resuscitated after cardiac arrest secondary to a ventricular fibrillation, did therapeutic mild hypothermia increase the rate of a favorable neurologic outcome and reduce mortality?",5.0,112.0,0.044642857142857144
+24,Does treatment with haloperidol lead to a significantly greater number of days alive and out of the hospital at 90 days than placebo when encountering patients in ICU with delirium?,4.0,112.0,0.03571428571428571
+25,"Does the use of ziprasidone as compared with placebo in patients with acute respiratory failure, shock, hypoactive or hyperactive delirium in the ICU alter the duration of delirium?",7.0,112.0,0.0625
+26,Is there more adverse events in ICU patients who recieved early dexmedetomidine?,0.0,112.0,0.0
+27,"Among patients undergoing mechanical ventilation in the ICU, does early dexmedetomidine for sedation result in a mortality rate similar to that of the usual-care group?",3.0,112.0,0.026785714285714284
+28,Was there a difference between dexmedetomidine and midazolam in time at targeted sedation level in mechanically ventilated ICU patients?,4.0,112.0,0.03571428571428571
+29,Is bradycardia an adverse effect in critically ill patients receiving dexmedetomidine?,1.0,112.0,0.008928571428571428
+30,"At comparable sedation levels, did dexmedetomidine-treated patients spend less time on the ventilator, experience less delirium, and develop less tachycardia and hypertension?",1.0,112.0,0.008928571428571428
+31,Does routine use of corticosteroids for persistent ARDS over prolonged periods have increased survival rate? ,6.0,112.0,0.05357142857142857
+32,Is there a decrease in mortality rate among patients with ARDS with an early exposure to conservative oxygenation strategy?,7.0,112.0,0.0625
+33,Is there a better neurologic outcome between targeted mild hypercapnia than targeted normocapnia in patients with a coma who were resuscitated following out of hospital cardiac arrest??,4.0,112.0,0.03571428571428571
+34,Does targeting a mean arterial blood pressure of 63 or 77 mm Hg in patients resuscitated from cardiac arrest reduce mortality?,1.0,112.0,0.008928571428571428
+35,"Does targeting a restrictive or liberal oxygenation strategy in comatose patients after resuscitation for cardiac arrest result in a similar incidence of death, severe disability, or coma?",5.0,112.0,0.044642857142857144
+36,Is there a difference in outcomes in patients who receive dexmedetomidine than propofol among mechanically ventilated adults with sepsis?,5.0,112.0,0.044642857142857144
