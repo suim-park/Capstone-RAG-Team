@@ -9,8 +9,16 @@
 3.	[Methods](#methods)
 
   	3.1 [Dataset](#dataset)
-  	
-  	3.2 [GraphRAG](#graphrag)
+
+	3.2 [Document Representation and Knowledge Graph](#document-representation-and-knowledge-graph)
+
+	3.3 [Retrieval](#retrieval)
+
+	3.4 [Sythesis](#synthesis)
+
+	3.5 [Ground Truth Labels](#ground-truth-labels)
+	
+  	3.6 [GraphRAG](#graphrag)
 
 4. [Experiments](#experiments)
 5. [Results](#results)
