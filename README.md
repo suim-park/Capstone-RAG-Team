@@ -1,6 +1,6 @@
 ![image](https://github.com/user-attachments/assets/60cd8b49-4dd9-4904-b94f-a7bf31ed06fa)
 
-# Medical Question Answering Using GraphRAG
+# Knowledge-Graph-Based Medical Question Answering for Critical Care Medicine
 
 ## Table of Contents
 
@@ -18,21 +18,7 @@
 7. [Contributors](#contributors)
 
 ## Abstract
-
-### Introduction
-
-Evidence-based decision-making is crucial for critical care medicine but is a challenge to physicians because of the constant update on new research and guidelines. Recent advancements of implementing Retrieval Augmented Generation (RAG) and Graph Databases in large language models (LLMs) have dramatically increased the capacity of machine-aided question-answering. **This project aims to leverage GraphRAG to answer clinical queries based on updated literature to facilitate clinical decision-making in critical care medicine**.
-
-### Methods
-Research papers in ARDS (Acute Respiratory Distress Syndrome) and Sepsis were extracted from Wiki Journal Club. GPT-4o was used for information parsing, and answer generation. Knowledge graphs were constructed using one to five papers associated with ARDS and Sepsis respectively. The papers were added randomly for graph construction but the first paper was always the source document of the medical question being asked. Outputs from the model were recorded on a single run. The generated answers were evaluated using GPT-4o rating, ROUGE-L score, and BLEU score.
-
-### Results
-
-A total of ten papers were extracted for knowledge graph construction. Two clinical questions, associated with ARDS and sepsis, respectively, were used to evaluate the graph-based question-answering model. The average performance of the ARDS and sepsis questions are 0.27 vs 0.87 (GPT rating), 0.06 vs 0.09 (ROUGE-L score), and 0.0 vs 0.03 (BLEU score).
-
-### Conclusion
-Our experiments revealed that source consensus strongly affects answer quality, with aligned sources scoring 0.87 and conflicting sources 0.27 on average GPT-4 ratings. To mitigate risks from low-quality answers, we are refining evaluation methods with clinical experts and incorporating metadata like research recency and impact. This solution could transform how physicians access critical medical information, improving efficiency and outcomes.
-
+Evidence-based clinical decision making is indispensable in critical care medicine. However, the rising amount of published reports in the field has made it more and more difficult to make decisions based on the most appropriate source. This project proposes a **knowledge-graph-based retrieval augmented generation (RAG) model** that can retrieve relevant research papers regarding yes-no medical questions in critical care, grouping the research paper based on the stance to the question, and generate a summary (patient, intervention, comparison, outcome) for each retrieved research paper. Thirty-six yes-no questions related to common medical conditions in critical care (acute respiratory distress syndrome, sepsis, cardiac arrest, delirium) were curated and one hundred twenty research papers were collected (from Wiki Journal Club and PubMed) and annotated by medical doctors to demonstrate the proposed solution. Our model achieved an average **accuracy of 0.925**, **precision of 0.561**, **sensitivity of 0.466**, at research paper retrieval. For knowledge synthesis, Our model achieved an average **accuracy of 0.875** on stance generation and an average human rating of **8/10** on research paper summary. Our proposed solution can dramatically reduce the time needed for research-informed decision making in critical medicine. Further exploration is needed to examine the generalizability of the proposed methods and the paradigm to evaluate generated summaries. 
 
 ## Introduction
 
@@ -43,11 +29,17 @@ However, physicians face significant challenges in staying up-to-date with the l
 Transformer-based large language models (LLMs) have demonstrated an increased capacity of machine question answering [1, 2], which has the potential to be applied to provide information for physician decision-making in critical care medicine. However, in the medical domain, the source of information plays a critical role, as different sources could point to contradicting conclusions to the same questions. Moreover, recommended intervention for a given medical condition can evolve as research papers and guidelines are published on a daily basis. To address this issue, Lewis et al. (2020) came up with the idea of retrieval augmented generation (RAG), which asks pre-trained models to give answers based on a source document [3]. Edge et al. (2024) further proposed to use a knowledge graph to represent documents and ask pre-trained models to give answers based on the graph (GraphRAG)[4].
 
 
-**This project aims to evaluate the potentials for a GraphRAG powered AI chatbot, using a knowledge graph, to practical and relevant literature summaries** for use at the bedside. When queried by a physician, the chatbot will provide detailed responses regarding research methodologies, the alignment of methods to conclusions, and the relevance of the research to the patient being treated. **An example question is; Among patients with septic shock and relative adrenal insufficiency, do corticosteroids reduce 28-day mortality?**
+**This project aims to evaluate the potentials for a GraphRAG powered AI chatbot, using a knowledge graph, to practical and relevant literature summaries** for use at the bedside. When queried by a physician, the model will provide detailed responses regarding research methodologies, the alignment of methods to conclusions, and the relevance of the research to the patient being treated. **An example question could be: Does the use of steroids on a patient with sepsis reduces mortality?**
 
-<img width="1108" alt="Screenshot 2024-11-08 at 1 32 33 PM" src="https://github.com/user-attachments/assets/f7203589-b6f3-42e0-b7d6-a49f80aae050">
+Some research papers tend to agree with the question being asked while some disagree, but ultimately depends on the patient being treated by the physician and which of the study closely aligns to the patient. Ultimately, when physicians consult research guidelines, they seek to understand how closely the study populations align with their current patients and how the research methods could benefit their patients. We adapted the GraphRAG model to retrieve relevant research papers given critical care medical questions, and generate a stance to claims (medical questions in yes-no form), and give factual synthesis using the Patient, Intervention, Comparison, and Outcome (PICO) framework. An example of output format can be seen here:
 
-Some research papers tend to agree with the question being asked while some disagree, but ultimately depends on the patient being treated by the physician and which of the study closely aligns to the patient. Ultimately, when physicians consult research guidelines, they seek to understand how closely the study populations align with their current patients and how the research methods could benefit their patients.
+![alt text](outputformat_example.png)
+
+Our goal is to answer the following questions:
+1. Is the graph-based RAG model capable of retrieving relevant research papers documents regarding across medical questions in critical care medicine?
+2. Can the graph-based RAG model synthesize factual summaries based on the research papers retrieved?
+3. Is the graph-based RAG model able to give consistent results?
+
 
 ## Methods
 
@@ -58,15 +50,29 @@ GraphRAG builds upon RAG by leveraging LLMs to construct a graph-based index thr
 Microsoft has conducted [experiments](https://arxiv.org/abs/2404.16130) comparing standard RAG models with GraphRAG, showing that GraphRAG significantly improves both the comprehensiveness and diversity of generated answers.
 
 
-## Dataset
+### Dataset
 
-Wiki Journal Club (WJC) is an open-source platform similar to Wikipedia, serving as a collaborative resource where medical professionals, primarily internal medicine physicians, contribute concise summaries of landmark clinical trials. These summaries make complex research accessible and understandable for a broad audience. Although WJC is open-source, it provides curated summaries that highlight key aspects of each study, including its purpose, methodology, results, and clinical implications. This structured format allows users to grasp essential information without needing to read the entire study, while the critical appraisal of each study's strengths, limitations, and biases helps users evaluate the quality and relevance of the research.
+A total of one hundred and twenty research papers associated with any medical conditions from WikiJournalClub, PubMed and Google Scholar were collected for model development. 36 yes-no medical questions associated with four medical conditions common in critical care medicine (ARDS, Sepsis, cardiac arrest, and delirium) were curated by three physicians specialized in critical medicine (K.N., M.A. and A.W, with 3, 10, and 20 years of experience respectively, see supplementary Table 1) for model evaluation. 
 
-For this project, we used the full text for data ingestion and indexing. Additionally, we utilized questions posed within Wiki Journal Club entries and the conclusions derived from each full paper to create a well-structured dataset that supports our chatbot’s query-based retrieval and summarization functions.
+### Document Representation and Knowledge Graph
 
-## GraphRAG
+For Knowledge Graph Generation, entities are first extracted from user input questions using OpenAI's GPT-4 model. The extracted entities were then transformed into vector representations using the all-MiniLM-L6-v2 model from SentenceTransformer. The model generated embeddings were of dimensionality of 384. Nodes labeled as "Entity" are created as part of the graph structure. These "Entity" nodes, which represent concepts derived from the documents, differ from the entities extracted from user input questions. To support semantic similarity searches, the "Entity" nodes are indexed as vectors with the same dimensionality of 384, aligning with the embeddings of the extracted entities. This dual-entity approach—combined with chunked document storage, automated graph construction, and vector-based indexing—creates a robust and flexible knowledge graph capable of advanced query processing and semantic search.
 
-![GraphRAG](2__Visualization/Workflow.png)
+### Retrieval
+To retrieve relevant research papers regarding medical questions, the cosine similarity between the embeddings of chunks of research papers and the medical question being posed was calculated. Source research paper of chunks with the highest cosine similarity scores (using cut points of top n chunks and/ or minimum relevance score) were retrieved to answer the medical question. 
+
+### Synthesis 
+
+Chunk embeddings and information stored in the knowledge graph was used as a prompt for pretrained LLMs (Open AI’s GPT-4o was used) to generate stances of and summaries for retrieved research papers. The following sections were synthesized: stances (supporting, equivocal, or against the claim of the medical question) and the PICO summary of the retrieved research paper (Study Design and Methodology, Study Population,  Interventions, Comparator, Outcomes, Strengths and Weaknesses, Key Findings and Conclusion). 
+
+### Ground Truth Labels
+
+Each research paper was annotated based on two dimensions for each medical question, relevance and stance. For relevance, each research paper was annotated as either relevant (1) or irrelevant (0) to every medical question curated for this study. For stances, each research paper was annotated as supporting (1), neutral (0) or against (-1) the claim of the given medical question. For papers annotated as irrelevant to a given question, the annotation for stance would be neutral (0). The annotation was done by the authors and checked by K.N. (specialized in general medicine with 5 years of experience). 
+For paper summaries, we leveraged large language models (specifically, Claude from AWS Bedrock), to generate the following for each paper included: Study Design and Methodology, Study Population, Interventions, Comparator, Outcomes, Strengths and Weaknesses, Key Findings and Conclusion. The generated summaries were modified and proofread by two physicians K.N. and M.A to serve as ground truth for model evaluation.
+
+### GraphRAG
+
+![GraphRAG](Flowchart.png)
 
 Below is how GraphRAG works:
 
@@ -77,49 +83,28 @@ Below is how GraphRAG works:
 5. When asking a question, entities in the question are parsed and matched to parts of the knowledge graph.
 5. The answer to the question is generated by LLM based on the node and community summaries most relevant to the question.
 
-## Answer Evaluation
-
-The following metrics collectively ensure a comprehensive evaluation of the model's performance, balancing automated similarity measures with expert and GPT-4-based assessments to gauge clinical relevance, reliability, and adherence to medical truth.
-* Human Rating: A licensed medical doctor assesses the alignment of the model's generated answers with clinical evidence. Ratings range from 0 (contradictory) to 1 (fully aligned), reflecting the extent to which the response adheres to medical truth and avoids misleading conclusions.
-
-* GPT-4 Rating: Both the ground truth and the model-generated responses are provided to GPT-4 via a carefully crafted prompt. GPT-4 evaluates the alignment of the generated response with the ground truth and assigns a score between 0 (contradictory) and 1 (fully aligned). This method offers a scalable, automated alternative to human evaluation while maintaining a focus on alignment and reliability.
-* BLEU Score: The BLEU (Bilingual Evaluation Understudy) score is a widely used metric for evaluating text generation models. It measures the overlap of n-grams (sequences of n words) between the generated answer and the reference answer. A higher BLEU score indicates greater similarity, with a particular emphasis on exact word and phrase matches. While BLEU is effective for tasks requiring strict textual similarity, it may not fully capture nuanced meaning or context, which are critical in medical applications.
-
-* ROUGE-L Score: The ROUGE-L (Recall-Oriented Understudy for Gisting Evaluation) score evaluates the quality of generated responses by assessing the longest common subsequence (LCS) between the generated and reference answers. This metric captures sentence-level similarity and prioritizes recall, making it suitable for tasks where preserving the context and meaning of information is crucial. A higher ROUGE-L score indicates better alignment with the reference in terms of overall structure and content.
-
-## Experiments
-
-Two medical questions regarding Sepsis and ARDS (Acute respiratory distress syndrome, one question for each medical condition) were chosen for the experiment. Each question was based on one source document (research question of a scientific paper). The GraphRAG model was tested under two conditions (aligned and conflicting, detail below) and the **resulting answers were evaluated using** Human Rating, **GPT-4 Rating**, BLEU score and ROUGE-L score. 
-
-
-1. In the **aligned condition**, documents pointing to **aligned conclusions** were used to construct a knowledge graph. Specifically, we used 1 (source), 3 (source + 1 document with **aligned conclusion** + 1 document with equivocal conclusion regarding the treatment), and 5 (source + 1 document with **aligned conclusion** + 3 documents with equivocal conclusion regarding the treatment) to build the knowledge graph.
-
-2. In the **conflicting condition**, documents pointing to **conflicting conclusions** were used to construct a knowledge graph. Specifically, we used 1 (source), 3 (source + 1 document with **conflicting** conclusion + 1 document related to ARDS but irrelevant to the treatment), and 5 (source + 1 document with **conflicting** conclusion + 3 documents related to ARDS but irrelevant to the treatment) to build the knowledge graph.
-
-
 ## Results
-![alt text](image.png)
+A total of 36 medical questions were posed to the model. For each question, the model first retrieved documents from the database based on high semantic similarity. These retrieved documents were then compared to annotated documents using binary metrics. Following retrieval, the model utilized a large language model (`GPT-3.5 Turbo`) to classify the retrieved documents into three stance categories—support, neutral, and against—relative to the question asked. Additionally, the model generated PICO (Population, Intervention, Comparison, Outcome) summaries for each retrieved document in JSON format, enabling users to quickly extract key information from the papers.
 
-The experiment aimed to evaluate the performance of the GraphRAG model under two conditions—**aligned (widespread consensus)** and **conflicting (no consensus)**—using two medical questions related to **Sepsis** and **ARDS (Acute Respiratory Distress Syndrome)**. The quality of the generated answers was rated by GPT-4 on a scale from 0 (contradictory) to 1 (fully aligned).
+Retrieval performance was assessed using recall, precision, F1-score, and overall accuracy, treating the task as a binary classification problem across all included research papers. For stance classification (support, against, neutral), overall accuracy was used to evaluate synthesis performance. PICO summary quality was evaluated using embedding-based and large language model-based metrics, including BERTScore and G-Eval. A subset of 10% of the synthesized answers was further evaluated by physicians (K.N., M.A.) to ensure clinical relevance and accuracy.
 
-1. **Aligned Condition (Widespread Consensus):**
-   - In this condition, documents with **aligned conclusions** regarding the medical treatment were incrementally added to the knowledge graph alongside a few documents that failed to provide determinate conclusion.
-   - The graph shows that as the number of research papers increases from 1 to 3, **answer quality improves**, starting from 0.8 (1 document) to 0.9 (3 documents), **but plateaus** between 3 and 5 documents.
-   - This trend highlights the positive influence of adding aligned and contextually relevant information to the GraphRAG model.
-
-2. **Conflicting Condition (No Consensus):**
-   - In this condition, documents with **conflicting conclusions** were added to the knowledge graph, alongside irrelevant or partially related documents.
-   - The graph reveals a **steady decline in answer quality** as more documents are introduced. The quality drops from 0.5 (1 document) to 0.2 (3 documents) and eventually to 0.1 (5 documents).
-   - This indicates that introducing conflicting or irrelevant information negatively impacts the model's performance, making it harder for the system to resolve contradictions and generate high-quality responses.
-
-**Key Findings:**
-- The results demonstrate that the GraphRAG model performs best when additional documents provide aligned and contextually relevant information. With little equivocal documents included, the model can synthesize the data effectively to improve the answer quality. 
-- Conversely, conflicting or irrelevant information introduces ambiguity, degrading the model's ability to generate coherent and accurate responses, as seen in the declining performance in the conflicting condition.
-
-These findings underscore the importance of data quality and consensus in constructing knowledge graphs for GraphRAG workflows, especially in fields like medicine, where inconsistent information can heavily impact outcomes. Later in this project, we will test the model's ability on a larger scale of documents and introduce additional metadata into the knowledge graph in an attempt to strengthen the model's reasoning mechanism.
 
 ## Conclusion
-In conclusion, while GraphRAG provides a significant advancement by enabling globally summarized content with pinned sources, it underscores the critical need for transparency in AI-driven decision-making. Decision-making should not rest solely with the model; instead, the model should focus on presenting the sources it learned from to allow human users to evaluate its outputs. Our findings revealed that conflicting documents confused the model, as it currently weighed all input documents equally, regardless of their credibility or relevance. Additionally, the absence of important metadata, such as citation counts, publication year, or organizational affiliations, limited the model's ability to differentiate authoritative from less reliable sources. Compared to traditional RAG approaches, which rely solely on semantics and similarity, GraphRAG offers enhanced reasoning through graph-based relationships. However, these insights highlight the importance of improving input weighting mechanisms and incorporating richer metadata to ensure more accurate and reliable outputs.
+In conclusion, our GraphRAG-based medical question answering system demonstrates significant potential for supporting evidence-based clinical decision-making in critical care medicine. With an average accuracy of 0.925 for document retrieval and 0.875 for stance classification, our model effectively organizes and synthesizes complex medical literature to address specific clinical questions.
+
+While GraphRAG provides a significant advancement by enabling globally summarized content with pinned sources, it underscores the critical need for transparency in AI-driven decision-making. Decision-making should not rest solely with the model; instead, the model should focus on presenting the sources it learned from to allow human users to evaluate its outputs. Our findings revealed that conflicting documents confused the model, as it currently weighed all input documents equally, regardless of their credibility or relevance. Additionally, the absence of important metadata, such as citation counts, publication year, or organizational affiliations, limited the model's ability to differentiate authoritative from less reliable sources.
+
+Compared to traditional RAG approaches, which rely solely on semantics and similarity, GraphRAG offers enhanced reasoning through graph-based relationships. However, these insights highlight the importance of improving input weighting mechanisms and incorporating richer metadata to ensure more accurate and reliable outputs.
+
+The positive evaluation by practicing physicians confirms that our approach can meaningfully reduce the cognitive burden associated with literature review, potentially saving critical time in urgent care settings. Future work should focus on:
+
+1. Incorporating document credibility metrics into the knowledge graph structure
+2. Expanding the document corpus to cover more critical care conditions
+3. Implementing dynamic knowledge graph updates as new research emerges
+4. Developing more nuanced stance classification for cases with mixed evidence
+5. Integrating patient-specific factors to further personalize research recommendations
+
+As AI continues to evolve in healthcare applications, systems like ours must balance technological advancement with clinical responsibility, **always positioning the physician as the ultimate decision-maker** while providing them with the most relevant and reliable evidence-based information possible.
 
 ## Detailed Map of the Repo
 ### [0__Documents](https://github.com/suim-park/Capstone-RAG-Team/tree/main/0__Documents)
@@ -147,7 +132,9 @@ Capstone Github Repository for RAG Team with Duke University School of Medicine
 * **Team Name**: RAG Team
 * **Executive Sponsor**: Dr. Ian Wong (a.ian.wong@duke.edu)
 * **Mentor Instructor**: Dr. Yue Jiang (yue.jiang@duke.edu)
-* **Team Member**: [Yun-chung (Murphy) Liu](https://github.com/halfmoonliu), [Keon Nartey](https://github.com/Keonnartey), [Suim Park](https://github.com/suim-park), [Bob Zhang](https://github.com/BobZhang26)
+* **Team Member**: 
+[Bob Zhang](https://github.com/BobZhang26), [Keon Nartey](https://github.com/Keonnartey),
+[Yun-chung (Murphy) Liu](https://github.com/halfmoonliu), [Suim Park](https://github.com/suim-park)
 
 ## References
 1. Vaswani, A., *et al.* "Attention is all you need." Advances in Neural Information Processing Systems (2017).
