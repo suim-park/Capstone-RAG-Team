@@ -41,7 +41,7 @@ Transformer-based large language models (LLMs) have demonstrated an increased ca
 
 Some research papers tend to agree with the question being asked while some disagree, but ultimately depends on the patient being treated by the physician and which of the study closely aligns to the patient. Ultimately, when physicians consult research guidelines, they seek to understand how closely the study populations align with their current patients and how the research methods could benefit their patients. We adapted the GraphRAG model to retrieve relevant research papers given critical care medical questions, and generate a stance to claims (medical questions in yes-no form), and give factual synthesis using the Patient, Intervention, Comparison, and Outcome (PICO) framework. An example of output format can be seen here:
 
-![alt text](outputformat_example.png)
+![image](https://github.com/user-attachments/assets/a295cd85-a942-4184-a359-56f5901cb5d8)
 
 Our goal is to answer the following questions:
 1. Is the graph-based RAG model capable of retrieving relevant research papers documents regarding across medical questions in critical care medicine?
@@ -80,7 +80,7 @@ For paper summaries, we leveraged large language models (specifically, Claude fr
 
 ### GraphRAG
 
-![GraphRAG](Flowchart.png)
+![image](https://github.com/user-attachments/assets/39e2ede9-e89d-444b-9e9a-7c6d066e7f1c)
 
 Below is how GraphRAG works:
 
