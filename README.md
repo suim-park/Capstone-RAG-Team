@@ -145,7 +145,7 @@ Capstone Github Repository for RAG Team with Duke University School of Medicine
 * **Mentor Instructor**: Dr. Yue Jiang (yue.jiang@duke.edu)
 * **Team Member**: 
 [Bob Zhang](https://github.com/BobZhang26), [Keon Nartey](https://github.com/Keonnartey),
-[Yun-chung (Murphy) Liu](https://github.com/halfmoonliu), [Suim Park](https://github.com/suim-park)
+[Yun-chung (Murphy) Liu](https://github.com/halfmoonliu), [Suim Park](https://github.com/suim-park), [Mahmoud Alwakeel](https://github.com/makee8888)
 
 ## References
 1. Vaswani, A., *et al.* "Attention is all you need." Advances in Neural Information Processing Systems (2017).
